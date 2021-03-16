@@ -268,7 +268,7 @@ namespace CompanyEmployees.MVC.Test
                 //Assert
                 using (var context = factory.CreateContext())
                 {
-                    var changedCompany = context.Companies.Include(c => c.Employees).FirstOrDefault(e => e.Id == testCompanyId);
+                    var changedCompany = context.Companies.FirstOrDefault(e => e.Id == testCompanyId);
                     Assert.IsNotNull(changedCompany);
                     Assert.AreEqual(testCompany.Id, changedCompany.Id);
                     Assert.AreEqual(testCompany.Name, changedCompany.Name);
